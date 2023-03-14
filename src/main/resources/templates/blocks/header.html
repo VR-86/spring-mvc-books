@@ -1,0 +1,27 @@
+<div th:fragment="header">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 text-secondary">Главная</a></li>
+                <li><a href="/books" class="nav-link px-2 text-white">Книги</a></li>
+                <li><a href="/authors" class="nav-link px-2 text-white">Авторы</a></li>
+                <li><a href="/genres" class="nav-link px-2 text-white">Жанры</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" th:action="@{/search}" method="get">
+                <input id="keyword" type="search" name="keyword" class="form-control form-control-dark text-bg-dark" placeholder="Поиск..." aria-label="Search">
+            </form>
+
+        </div>
+    </div>
+
+    <div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
+         role="alert">
+        [[${message}]]
+        <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+</div>
